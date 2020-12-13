@@ -1,0 +1,26 @@
+<HTML>
+<head>
+    <title>Top 20 tweets similarity</title>
+    <meta charset="utf-8">
+</head>
+
+<BODY bgcolor=#77B5FE>
+    <H1 style="text-align:center;">Top 20 tweets similarity </H1> <br>
+	<form method="POST" action="http://localhost:5000/result">
+	    <center>
+		    <textarea name="sentences" rows="20" cols="60" " style="border:2px solid black;" placeholder="Sentences" >
+		    </textarea>
+		    <input type = "submit" value="Submit">
+			
+	    </center>
+	</form>
+	<center>
+		<p>Top 20 tweets similar to your search.</p>
+		{% for word in result %}
+		<p>{{word}}</p>
+		{% endfor %}
+		
+	</center>
+
+</BODY>
+</HTML>
