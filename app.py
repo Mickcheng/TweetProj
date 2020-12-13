@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 import pandas as pd
 import joblib
-
+import gensim
 from nltk.tokenize import TweetTokenizer
 from flask import Markup
 
