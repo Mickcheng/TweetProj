@@ -43,10 +43,10 @@ class FlaskTests(unittest.TestCase):
 		
 	def test_get_tweets(self):
 		params = {
-					'twt_test' : self.tweet['tweet_test'],
-					'twt_resp' : self.tweet['tweet_resp']
+					'twt_test' : self.tweet['tweet_test']
+					
 		}
-		self.assertEqual(app.get_tweets(tweet_test), "neutral")	
+		self.assertEqual(len(app.get_tweets(tweet_test)), 20")
 	
 	def test_sent(self):
 		params = {'tweet_resp': 'positive'}
