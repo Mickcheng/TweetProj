@@ -1,7 +1,7 @@
 import unittest
 import os
 import requests
-import app
+from app import get_tweets
 
 
 class FlaskTests(unittest.TestCase):
