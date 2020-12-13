@@ -1,10 +1,10 @@
 FROM python:3.6
 
-WORKDIR C:/
+WORKDIR /app
 RUN mkdir ./dataprojects
 RUN mkdir ./dataprojects/model
 
-ENV MODEL_DIR=/C:/dataprojects/model/
+ENV MODEL_DIR=./dataprojects/model/
 ENV MODEL_FILE=model.joblib
 ENV METADATA_FILE =metadata.json
 
