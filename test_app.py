@@ -1,7 +1,7 @@
 import unittest
 import os
 import requests
-import dataengineeringproject2.app as app 
+import app
 
 
 class FlaskTests(unittest.TestCase):
