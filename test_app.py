@@ -46,7 +46,7 @@ class FlaskTests(unittest.TestCase):
 					'twt_test' : self.tweet['tweet_test']
 					
 		}
-		self.assertEqual(len(app.get_tweets(tweet_test)), 20")
+		self.assertEqual(len(app.get_tweets(tweet_test)), 20)
 	
 	def test_sent(self):
 		params = {'tweet_resp': 'positive'}
