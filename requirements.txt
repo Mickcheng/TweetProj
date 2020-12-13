@@ -7,3 +7,4 @@ nltk
 pandas
 redis
 gensim
+requests
