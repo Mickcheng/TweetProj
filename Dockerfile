@@ -20,6 +20,9 @@ COPY . .
 COPY docker-ml.py .
 RUN python docker-ml.py
 
+COPY test_app.py
+RUN test_app.py
+
 
 EXPOSE 5000
 
