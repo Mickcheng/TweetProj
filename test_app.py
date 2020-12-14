@@ -1,7 +1,7 @@
 import unittest
 import os
 import requests
-from app import get_tweets
+
 
 
 class FlaskTests(unittest.TestCase):
@@ -41,12 +41,12 @@ class FlaskTests(unittest.TestCase):
 		responce = requests.get('http://localhost:5000')
 		self.assertEqual(responce.status_code, 200)		
 		
-	def test_get_tweets(self):
+	"""def test_get_tweets(self):
 		params = {
 					'twt_test' : self.tweet['tweet_test']
 					
 		}
-		self.assertEqual(len(app.get_tweets(tweet_test)), 20)
+		self.assertEqual(len(app.get_tweets(tweet_test)), 20)"""
 	
 	def test_sent(self):
 		params = {'tweet_resp': 'positive'}
