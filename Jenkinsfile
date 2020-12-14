@@ -15,7 +15,7 @@ pipeline{
 		}
 		stage('Stop Container'){
 			steps{
-				sh 'docker rm -f myapp_c'
+				sh 'docker container rm -f $(docker container ls -qa)'
 			}
 		}
 	}
