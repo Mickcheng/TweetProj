@@ -13,10 +13,5 @@ pipeline{
 				sh 'docker run -d -p 5000:5000 --name myapp_c myapp'
 			}
 		}
-		stage('Stop Container'){
-			steps{
-				sh 'docker container rm -f $(docker container ls -qa)'
-			}
-		}
 	}
 }
