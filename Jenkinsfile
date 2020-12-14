@@ -13,11 +13,6 @@ pipeline{
 				sh 'docker run -d -p 5000:5000 --name myapp_c myapp'
 			}
 		}
-		stage('Testing'){
-			steps{
-				sh 'python test_app.py'
-			}
-		}
 		stage('Stop Container'){
 			steps{
 				sh 'docker rm -f myapp_c'
