@@ -7,3 +7,5 @@ nltk
 pandas
 redis
 gensim
+prometheus-client
+
