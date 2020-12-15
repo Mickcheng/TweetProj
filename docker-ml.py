@@ -18,6 +18,7 @@ nltk.download('stopwords')
 
 
 MODEL_DIR = os.environ["MODEL_DIR"]
+
 MODEL_FILE = os.environ["MODEL_FILE"]
 METADATA_FILE = os.environ["METADATA_FILE"]
 MODEL_PATH = os.path.join(MODEL_DIR,MODEL_FILE)
@@ -52,4 +53,5 @@ model.train(tagged_data, total_examples=model.corpus_count, epochs=max_epochs)
 
 print("serializing metadata to {}".format(METADATA_PATH))
 dump(model, MODEL_PATH)
+
 
