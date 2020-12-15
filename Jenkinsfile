@@ -13,12 +13,6 @@ pipeline{
 				sh 'docker run -d -p 5000:5000 myapp'
 			}
 		}
-		stage('Testing'){
-			steps{
-				echo 'Testing app'
-				sh 'python test_app.py'
-			}
-		}
 		stage('Stop Container'){
 			steps{
 				echo 'Stop flask app'
