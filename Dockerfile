@@ -1,6 +1,7 @@
 FROM python:3.6
 
 WORKDIR C:/
+
 RUN mkdir ./dataprojects
 RUN mkdir ./dataprojects/model
 
@@ -24,5 +25,6 @@ RUN python docker-ml.py
 
 
 EXPOSE 5000
+EXPOSE 8010
 
 CMD ["python", "app.py"]
