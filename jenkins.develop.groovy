@@ -6,7 +6,7 @@ def test_app(){
   sh 'python test_app.py'
   }
 
-def run_ap(){
+def down_app(){
   sh 'docker-compose down'
   }
 
