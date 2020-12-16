@@ -49,11 +49,16 @@ pipeline{
 		stage('Going live'){
 			steps{
 				script{
-					if (params.RESPONSE == 'yes'){
-						groovyfile.live_app()
+					if (env.BRANCH_NAME == 'release'){
+						if (params.RESPONSE == 'yes'){
+							groovyfile.live_app()
+						}
+						else {
+							echo 'Acceptance test failed'
+						}
 					}
-					else {
-						echo 'Acceptance test failed'
+					else{
+						groovyfile.live_app()
 					}
 				}
 			}
