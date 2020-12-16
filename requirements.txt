@@ -8,3 +8,4 @@ pandas
 redis
 gensim
 requests
+prometheus-client
