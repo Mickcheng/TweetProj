@@ -59,7 +59,6 @@ pipeline{
 					}
 					else{
 						groovyfile.live_app()
-						echo 'develop branch'
 					}
 				}
 			}
