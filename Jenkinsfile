@@ -47,11 +47,15 @@ pipeline{
 			}
 		}
 		stage('Going live'){
-			if (params.RESPONSE == 'yes'){
-				groovyfile.live_app()
-			}
-			else {
-				echo 'Acceptance test failed'
+			steps{
+				script{
+					if (params.RESPONSE == 'yes'){
+						groovyfile.live_app()
+					}
+					else {
+						echo 'Acceptance test failed'
+					}
+				}
 			}
 			/*when{
 				expression{ params.RESPONSE == 'yes'}
