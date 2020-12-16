@@ -17,13 +17,13 @@ pipeline{
 				}
 			}
 		}
-		stage('Testing'){
+		/*stage('Testing'){
 			steps{
 				script{
 					groovy.test_app()
 				}
 			}
-		}
+		}*/
 		stage('Docker images down'){
 			steps{
 				script{
