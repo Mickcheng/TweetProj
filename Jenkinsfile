@@ -27,21 +27,21 @@ pipeline{
 		stage('Docker images down'){
 			steps{
 				script{
-					groovy.down_app()
+					groovyfile.down_app()
 				}
 			}
 		}
 		stage('Creating Release branch'){
 			steps{
 				script{
-					groovy.release_app()
+					groovyfile.release_app()
 				}
 			}
 		}
 		stage('Going live'){
 			steps{
 				script{
-					groovy.live_app()
+					groovyfile.live_app()
 				}
 			}
 		}
