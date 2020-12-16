@@ -17,13 +17,6 @@ pipeline{
 				}
 			}
 		}
-		stage('Run Flask app'){
-			steps{
-				script{
-					groovyfile.run_app()
-				}
-			}
-		}
 		stage('Testing'){
 			steps{
 				script{
