@@ -18,6 +18,14 @@ pipeline{
 				}
 			}
 		}
+		stage('Run Flask app'){
+			steps{
+				script{
+					echo 'Running the docker image'
+					groovyfile.run_app()
+				}
+			}
+		}
 		stage('Testing'){
 			steps{
 				script{
