@@ -1,9 +1,12 @@
 def build_app(){
   //sh 'docker-compose up -d'
   sh 'docker build -t myapp .'
+  }
+
+def run_app(){
   sh 'docker run -d -p 5000:5000 myapp'
   }
-  
+
 def test_app(){
   //sh 'python test_app.py'
   }
