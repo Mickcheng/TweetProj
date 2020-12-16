@@ -1,4 +1,6 @@
 def groovyfile
+def resp
+
 pipeline{
 	agent any
 	stages{
@@ -17,13 +19,13 @@ pipeline{
 				}
 			}
 		}
-		/*stage('Testing'){
+		stage('Testing'){
 			steps{
 				script{
-					groovy.test_app()
+					resp = groovyfile.test_app()
 				}
 			}
-		}*/
+		}
 		stage('Docker images down'){
 			steps{
 				script{
@@ -38,12 +40,14 @@ pipeline{
 				}
 			}
 		}
-		stage('Going live'){
-			steps{
-				script{
-					groovyfile.live_app()
+		if (resp == 'yes'):
+			stage('Going live'){
+				steps{
+					script{
+						groovyfile.live_app()
+					}
 				}
 			}
-		}
+		else: pass
 	}
 }
