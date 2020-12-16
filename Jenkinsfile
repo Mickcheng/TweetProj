@@ -1,8 +1,13 @@
 def groovyfile
-def resp
 
 pipeline{
 	agent any
+	parameters{
+		choice(
+			choices:['yes', 'no']
+			description: 'Response to the acceptance test'
+			name:'RESPONSE'
+			)
 	stages{
 		stage('Build script'){
 			steps{
@@ -33,6 +38,9 @@ pipeline{
 				}
 			}
 		}
+		when{
+			expression{ params.RESPONSE == 'yes'}
+		}
 		stage('Creating Release branch'){
 			steps{
 				script{
@@ -40,14 +48,12 @@ pipeline{
 				}
 			}
 		}
-		if (resp == 'yes'):
-			stage('Going live'){
-				steps{
-					script{
-						groovyfile.live_app()
-					}
+		stage('Going live'){
+			steps{
+				script{
+					groovyfile.live_app()
 				}
 			}
-		else: pass
+		}
 	}
 }
