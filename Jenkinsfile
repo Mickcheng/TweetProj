@@ -1,6 +1,14 @@
 def groovyfile
+
 pipeline{
 	agent any
+	parameters{
+		choice(
+			choices:['yes', 'no'],
+			description: 'Response to the acceptance test',
+			name:'RESPONSE'
+			)
+	}
 	stages{
 		stage('Build script'){
 			steps{
@@ -17,13 +25,13 @@ pipeline{
 				}
 			}
 		}
-		/*stage('Testing'){
+		stage('Testing'){
 			steps{
 				script{
-					groovy.test_app()
+					resp = groovyfile.test_app()
 				}
 			}
-		}*/
+		}
 		stage('Docker images down'){
 			steps{
 				script{
@@ -41,7 +49,18 @@ pipeline{
 		stage('Going live'){
 			steps{
 				script{
-					groovyfile.live_app()
+					if (env.BRANCH_NAME == 'release'){
+						if (params.RESPONSE == 'yes'){
+							groovyfile.live_app()
+						}
+						else {
+							echo 'Acceptance test failed'
+						}
+					}
+					else{
+						groovyfile.live_app()
+						echo 'develop branch'
+					}
 				}
 			}
 		}
