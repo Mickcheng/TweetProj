@@ -2,11 +2,7 @@ import unittest
 import os
 import requests
 
-
-
-class FlaskTests(unittest.TestCase):
-	
-	
+class FlaskTests(unittest.TestCase):	
 
 	def tearDown(self):
 		pass
