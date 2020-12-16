@@ -22,5 +22,6 @@ RUN python docker-ml.py
 
 
 EXPOSE 5000
+EXPOSE 8010
 
 CMD ["python", "app.py"]
