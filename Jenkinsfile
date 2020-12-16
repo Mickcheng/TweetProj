@@ -39,9 +39,6 @@ pipeline{
 				}
 			}
 		}
-		when{
-			expression{ params.RESPONSE == 'yes'}
-		}
 		stage('Creating Release branch'){
 			steps{
 				script{
@@ -50,6 +47,9 @@ pipeline{
 			}
 		}
 		stage('Going live'){
+			when{
+				expression{ params.RESPONSE == 'yes'}
+			}
 			steps{
 				script{
 					groovyfile.live_app()
