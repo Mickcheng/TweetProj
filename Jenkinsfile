@@ -62,22 +62,6 @@ pipeline{
 					}
 				}
 			}
-			/*when{
-				expression{ params.RESPONSE == 'yes'}
-			}
-			steps{
-				script{
-					groovyfile.live_app()
-				}
-			}
-			when{
-				expression{ params.RESPONSE == 'no'}
-			}
-			steps{
-				script{
-					echo 'Acceptance test failed.'
-				}
-			}*/
 		}
 	}
 }
