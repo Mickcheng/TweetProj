@@ -8,6 +8,7 @@ pipeline{
 			description: 'Response to the acceptance test',
 			name:'RESPONSE'
 			)
+	}
 	stages{
 		stage('Build script'){
 			steps{
