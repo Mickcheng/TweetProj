@@ -4,8 +4,8 @@ pipeline{
 	agent any
 	parameters{
 		choice(
-			choices:['yes', 'no']
-			description: 'Response to the acceptance test'
+			choices:['yes', 'no'],
+			description: 'Response to the acceptance test',
 			name:'RESPONSE'
 			)
 	stages{
