@@ -1,19 +1,13 @@
 def build_app(){
-  //sh 'docker-compose up -d'
-  sh 'docker build -t myapp .'
-  }
-
-def run_app(){
-  sh 'docker run -d -p 5000:5000 myapp'
+  sh 'docker-compose up -d'
   }
 
 def test_app(){
-  //sh 'python test_app.py'
+  sh 'python test_app.py'
   }
 
 def down_app(){
-  //sh 'docker-compose down'
-  sh 'docker rm -f $(docker container ls -qa)
+  sh 'docker-compose down'
   }
 
 def release_app(){
