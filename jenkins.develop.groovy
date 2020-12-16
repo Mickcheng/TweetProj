@@ -15,6 +15,7 @@ def release_app(){
   }
   
 def live_app(){
+  echo 'This is the develop branch'
   }
 
 return this
