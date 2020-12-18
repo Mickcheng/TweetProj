@@ -1,0 +1,11 @@
+flask
+joblib
+matplotlib
+numpy
+scikit-learn
+nltk
+pandas
+redis
+gensim
+requests
+prometheus-client
